@@ -6,6 +6,7 @@
   import Keyedeach from "./Keyedeach.svelte";
   import Await from "./Await.svelte";
 	import Eventdom from "./Eventdom.svelte";
+	import Bind from "./Bind.svelte";
 </script>
 <style>
   .page {
@@ -42,7 +43,8 @@
   section {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 1em 1em;
     @media(max-width: 600px) {
       border-radius: 0px;
@@ -79,6 +81,9 @@
     </section>
     <section>
       <Eventdom />
+    </section>
+    <section>
+      <Bind />
     </section>
   </main>
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Innerevent from "./Innerevent.svelte";
+	import Outerevet from "./Outerevet.svelte";
 
 
   function eyesPosition(id: string, event: MouseEvent) {
@@ -126,5 +127,6 @@
 
   <button on:click|once={() => num += 1}>Click me {num}</button>
   <Innerevent on:message={handleMessage}/>
+  <Outerevet on:message = {handleMessage} />
 </div>
 
