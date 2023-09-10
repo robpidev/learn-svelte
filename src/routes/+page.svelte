@@ -7,6 +7,7 @@
   import Await from "./Await.svelte";
 	import Eventdom from "./Eventdom.svelte";
 	import Bind from "./Bind.svelte";
+	import Lifecicles from "./Lifecicles.svelte";
 </script>
 <style>
   .page {
@@ -84,6 +85,9 @@
     </section>
     <section>
       <Bind />
+    </section>
+    <section>
+      <Lifecicles />
     </section>
   </main>
 </div>
