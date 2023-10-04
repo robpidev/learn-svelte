@@ -34,6 +34,28 @@
 			div.scrollTo(0, div.offsetHeight);
 		}
 	});
+
+	// tick
+
+	import { tick } from 'svelte';
+
+	let text = 'Select some text and hit the tab key to toggle uppercase';
+	async function handleKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Tab') return;
+
+		event.preventDefault();
+
+		const { selectionStart, selectionEnd, value } = this;
+		const selection = value.slice(selectionStart, selectionEnd);
+
+		const replacement = /[a-z]/.test(selection) ? selection.toUpperCase() : selection.toLowerCase();
+
+		text = value.slice(0, selectionStart) + replacement + value.slice(selectionEnd);
+
+		await tick();
+		this.selectionStart = selectionStart;
+		this.selectionEnd = selectionEnd;
+	}
 </script>
 
 <Title text="Lifecicles" />
@@ -49,6 +71,9 @@
 		<input class="btn-send" type="button" on:click={send} value="send" />
 	</form>
 </div>
+
+<br />
+<textarea on:keydown={handleKeydown} value={text} name="" id="" cols="30" rows="10" />
 
 <style>
 	.chat {
@@ -93,7 +118,8 @@
 		flex: 1;
 	}
 
-	.ipt-message:focus {
+	.ipt-message:focus,
+	textarea:focus {
 		outline: none;
 		border: solid 1px #673ab7;
 		caret-color: #673ab7;
@@ -134,5 +160,15 @@
 		border-radius: 12px 12px 0px 12px;
 		align-self: flex-end;
 		background: #673ab7;
+	}
+
+	textarea {
+		background: inherit;
+		width: 90%;
+		max-width: 600px;
+		border-radius: 12px;
+		resize: none;
+		color: white;
+		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 </style>
