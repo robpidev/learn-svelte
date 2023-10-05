@@ -25,8 +25,18 @@
 	.path {
 		text-decoration: none;
 		color: white;
-		padding: 0.5em 1em;
+		padding: 0.4em 1em;
 		border-radius: 1em;
-		border: 1px solid purple;
+		border: 1px solid slateblue;
+		background-color: rgba(102, 0, 179, 0.3);
+	}
+
+	.path:hover {
+		background-color: rgba(102, 0, 179, 0.4);
+	}
+
+	.path:focus {
+		background-color: rgba(102, 0, 179, 0.5);
+		box-shadow: 1px 1px 4px rgba(102, 0, 179, 0.5);
 	}
 </style>
