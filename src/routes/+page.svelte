@@ -8,6 +8,7 @@
 	import Eventdom from './Eventdom.svelte';
 	import Bind from './Bind.svelte';
 	import Lifecicles from './Lifecicles.svelte';
+	import Stores from './Stores.svelte';
 </script>
 
 <div class="page">
@@ -41,6 +42,9 @@
 		</section>
 		<section>
 			<Lifecicles />
+		</section>
+		<section>
+			<Stores />
 		</section>
 	</main>
 </div>

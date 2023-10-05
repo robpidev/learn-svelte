@@ -25,13 +25,13 @@
 	beforeUpdate(() => {
 		if (div) {
 			const scrollableDistance = div.scrollHeight - div.offsetHeight;
-			autoScroll = scrollableDistance > 0;
+			autoScroll = div.scrollTop > scrollableDistance - 500;
 		}
 	});
 
 	afterUpdate(() => {
 		if (autoScroll) {
-			div.scrollTo(0, div.offsetHeight);
+			div.scrollTo(0, div.scrollHeight);
 		}
 	});
 
@@ -163,7 +163,9 @@
 	}
 
 	textarea {
+		box-sizing: border-box;
 		background: inherit;
+		padding: 1em;
 		width: 90%;
 		max-width: 600px;
 		border-radius: 12px;
