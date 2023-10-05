@@ -11,55 +11,43 @@
 	import Stores from './Stores.svelte';
 </script>
 
-<div class="page">
-	<div class="title">
-		<span class="page-title">Learn Svelte</span>
-	</div>
-	<main>
-		<section>
-			<Image src="file.png" />
-		</section>
-		<section>
-			<Counter />
-		</section>
-		<section>
-			<Array />
-		</section>
-		<section>
-			<Each />
-		</section>
-		<section>
-			<Keyedeach />
-		</section>
-		<section>
-			<Await />
-		</section>
-		<section>
-			<Eventdom />
-		</section>
-		<section>
-			<Bind />
-		</section>
-		<section>
-			<Lifecicles />
-		</section>
-		<section>
-			<Stores />
-		</section>
-	</main>
+<div class="title">
+	<span class="page-title">Learn Svelte</span>
 </div>
+<main>
+	<section>
+		<Image src="file.png" />
+	</section>
+	<section>
+		<Counter />
+	</section>
+	<section>
+		<Array />
+	</section>
+	<section>
+		<Each />
+	</section>
+	<section>
+		<Keyedeach />
+	</section>
+	<section>
+		<Await />
+	</section>
+	<section>
+		<Eventdom />
+	</section>
+	<section>
+		<Bind />
+	</section>
+	<section>
+		<Lifecicles />
+	</section>
+	<section>
+		<Stores />
+	</section>
+</main>
 
 <style>
-	.page {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 10px;
-		@media (max-width: 600px) {
-			padding: 0px;
-		}
-		gap: 1em;
-	}
 	.page-title {
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 			Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
