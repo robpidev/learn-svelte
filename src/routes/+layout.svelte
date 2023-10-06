@@ -4,6 +4,7 @@
 
 <nav>
 	<a href="/" aria-current={$page.url.pathname === '/'}>Home</a>
+	<a href="/avanced" aria-current={$page.url.pathname.includes('/avanced')}>avanced</a>
 	<a href="/sveltekit" aria-current={$page.url.pathname.includes('/sveltekit')}>sveltekit</a>
 </nav>
 
