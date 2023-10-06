@@ -16,10 +16,18 @@
 	hr {
 		width: 80%;
 	}
+
 	.paths {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1em;
+		padding: 0px 1em;
+	}
+
+	@media (max-width: 500px) {
+		hr {
+			width: 100%;
+		}
 	}
 
 	.path {
