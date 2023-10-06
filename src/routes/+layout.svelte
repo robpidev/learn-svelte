@@ -1,6 +1,10 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+</script>
+
 <nav>
-	<a href="/">Home</a>
-	<a href="/sveltekit">sveltekit</a>
+	<a href="/" aria-current={$page.url.pathname === '/'}>Home</a>
+	<a href="/sveltekit" aria-current={$page.url.pathname.includes('/sveltekit')}>sveltekit</a>
 </nav>
 
 <div class="page">
@@ -17,5 +21,29 @@
 			padding: 0px;
 		}
 		gap: 1em;
+	}
+
+	nav {
+		display: flex;
+		padding: 0.4em;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(255, 255, 255, 0.09);
+	}
+
+	nav a {
+		color: white;
+		text-decoration: none;
+		padding: 0.3em 0.6em;
+		transition: background 0.2s;
+		border-radius: 5px;
+	}
+
+	nav a:hover {
+		/* color: slateblue; */
+		background: slateblue;
+	}
+
+	nav a[aria-current='true'] {
+		font-style: italic;
 	}
 </style>
