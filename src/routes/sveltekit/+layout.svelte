@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { paths } from './paths';
+	import { page } from '$app/stores';
 </script>
 
 <slot />
@@ -8,13 +9,15 @@
 <hr />
 <section class="paths">
 	{#each paths as path}
-		<a class="path" href="/sveltekit/{path.path}">{path.name}</a>
+		{#if !$page.url.pathname.includes(path.path)}
+			<a class="path" href="/sveltekit/{path.path}">{path.name}</a>
+		{/if}
 	{/each}
 </section>
 
 <style>
 	hr {
-		width: 80%;
+		width: 90%;
 	}
 
 	.paths {
@@ -22,9 +25,10 @@
 		flex-wrap: wrap;
 		gap: 1em;
 		padding: 0px 1em;
+		justify-content: center;
 	}
 
-	@media (max-width: 500px) {
+	@media (max-width: 640px) {
 		hr {
 			width: 100%;
 		}

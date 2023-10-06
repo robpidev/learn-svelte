@@ -7,6 +7,8 @@
 	}
 </script>
 
+<h1>Api rutes</h1>
+
 <button on:click={roll}>Roll the dice</button>
 
 <a href="/sveltekit/apiroutes/post">Post todo list</a>
