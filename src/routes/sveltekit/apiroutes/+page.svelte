@@ -1,10 +1,10 @@
 <script lang="ts">
-	let number: Number;
+    let number: Number;
 
-	async function roll() {
-		const response = await fetch('/sveltekit/apiroutes/roll');
-		number = await response.json();
-	}
+    async function roll() {
+        const response = await fetch('/sveltekit/apiroutes/roll');
+        number = await response.json();
+    }
 </script>
 
 <h1>Api rutes</h1>
@@ -13,5 +13,5 @@
 
 <a href="/sveltekit/apiroutes/post">Post todo list</a>
 {#if number !== undefined}
-	<p>You rolled a {number}</p>
+    <p>You rolled a {number}</p>
 {/if}

@@ -2,7 +2,7 @@
 	import { paths } from './paths';
 </script>
 
-<div class="page">
+<div class="content">
 	<slot />
 
 	<div class="paths">
@@ -13,15 +13,9 @@
 </div>
 
 <style>
-	@media (min-width: 640px) {
-		.page {
-			width: 100%;
-		}
-	}
-
-	.page {
-		padding: 0em 1em;
+	.content {
 		max-width: 1200px;
+		width: 100%;
 	}
 	.paths {
 		border-top: 1px solid rgb(255, 255, 255, 0.1);
