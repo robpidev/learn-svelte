@@ -1,5 +1,10 @@
 <script lang="ts">
     import { page } from '$app/stores';
+    let numbers = [1, 20];
+    for (let i = 0; i < numbers.length; i++) {
+        const number = numbers[i];
+        console.log('number: ', number);
+    }
 </script>
 
 <nav>

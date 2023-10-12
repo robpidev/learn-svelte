@@ -1,27 +1,54 @@
 <script lang="ts">
-	import Fade from './fade.svelte';
-	import Fly from './fly.svelte';
-	import Inandout from './inandout.svelte';
+    import CustomCss from './CustomCSS.svelte';
+    import CustomJs from './CustomJS.svelte';
+    import Events from './Events.svelte';
+    import Fade from './Fade.svelte';
+    import Fly from './Fly.svelte';
+    import Global from './Global.svelte';
+    import InAndOut from './InAndOut.svelte';
+    import KeyBlocks from './KeyBlocks.svelte';
 </script>
 
 <h1>Transitions</h1>
 <section>
-	<Fade />
+    <Fade />
 </section>
 <section>
-	<Fly />
+    <Fly />
 </section>
 <section>
-	<Inandout />
+    <InAndOut />
+</section>
+<section>
+    <CustomCss />
+</section>
+<section>
+    <CustomJs />
+</section>
+<section>
+    <Events />
+</section>
+<section>
+    <Global />
+</section>
+<section>
+    <KeyBlocks />
 </section>
 
 <style>
-	section {
-		position: relative;
-		margin-bottom: 1em;
-		background: rgba(255, 255, 255, 0.09);
-		padding: 1em;
-		border-radius: 1em;
-		overflow-x: hidden;
-	}
+    h1 {
+        padding: 1em;
+    }
+    section {
+        position: relative;
+        margin-bottom: 1em;
+        background: rgba(255, 255, 255, 0.09);
+        padding: 1em;
+        border-radius: 1em;
+        overflow-x: hidden;
+
+        @media (max-width: 600px) {
+            border-radius: 0px;
+        }
+    }
 </style>

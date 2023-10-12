@@ -1,7 +1,7 @@
 const path = '/avanced/';
 
 interface Path {
-url: string;
+    url: string;
     name: string;
 }
 
