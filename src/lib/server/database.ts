@@ -40,11 +40,13 @@ export function createTodo(userid: string, description: string) {
   })
 
   return { id };
+
 }
 
 export function toggleTodo(userid: string, todoId: string, done: boolean) {
   const todos = db.get(userid) ?? [];
   // change todo.done
+    
   todos.find((todo: Todo) => todo.id === todoId).done = done;
 }
 

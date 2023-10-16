@@ -1,6 +1,7 @@
 <script lang="ts">
     import CustomCss from './CustomCSS.svelte';
     import CustomJs from './CustomJS.svelte';
+    import Deferred from './Deferred.svelte';
     import Events from './Events.svelte';
     import Fade from './Fade.svelte';
     import Fly from './Fly.svelte';
@@ -33,6 +34,9 @@
 </section>
 <section>
     <KeyBlocks />
+</section>
+<section>
+    <Deferred />
 </section>
 
 <style>

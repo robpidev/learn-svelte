@@ -24,7 +24,6 @@ export const actions = {
       db.createTodo(cookies.get('userid'), data.get('description'));
     } catch (error) {
       return fail(422, {
-        description: data.get('description'),
         error: error.message
       })
     }
