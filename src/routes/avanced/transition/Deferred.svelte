@@ -1,5 +1,7 @@
 <script lang="ts">
     import { createTodoStore } from './todos';
+    import { send, receive } from './transitioncrosfade';
+    import { flip } from 'svelte/animate';
 
     const todos = createTodoStore([
         { done: false, description: 'write some docs' },
@@ -9,8 +11,6 @@
         { done: false, description: 'feed the turtle' },
         { done: false, description: 'fix some bugs' }
     ]);
-
-    import { send, receive } from './transitioncrosfade';
 </script>
 
 <h1>Todo list</h1>
@@ -31,7 +31,11 @@
     <ul class="todos">
         <h1>Undone:</h1>
         {#each $todos.filter((todo) => !todo.done) as todo (todo.id)}
-            <li in:receive={{ key: todo.id }} out:send={{ key: todo.id }}>
+            <li
+                in:receive={{ key: todo.id }}
+                out:send={{ key: todo.id }}
+                animate:flip={{ duration: 200 }}
+            >
                 <label class="todo">
                     <input
                         type="checkbox"
@@ -48,7 +52,11 @@
     <ul class="todos">
         <h2>Donde</h2>
         {#each $todos.filter((todo) => todo.done) as todo (todo.id)}
-            <li in:receive={{ key: todo.id }} out:send={{ key: todo.id }}>
+            <li
+                in:receive={{ key: todo.id }}
+                out:send={{ key: todo.id }}
+                animate:flip={{ duration: 200 }}
+            >
                 <label class="todo">
                     <input
                         type="checkbox"
@@ -56,7 +64,7 @@
                         on:change={(e) => todos.mark(todo, e.currentTarget.checked)}
                     />
                     <span>{todo.description}</span>
-                    <button on:click={() => todos.remove} />
+                    <button on:click={() => todos.remove(todo)} />
                 </label>
             </li>
         {/each}
@@ -65,6 +73,7 @@
 
 <style>
     .todo-list {
+        overflow: hidden;
         display: flex;
         flex-wrap: wrap;
         gap: 1em;
