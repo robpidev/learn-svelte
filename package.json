@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"elizabot": "^0.0.3"
+		"elizabot": "^0.0.3",
+		"tippy.js": "^6.3.7"
 	}
 }
