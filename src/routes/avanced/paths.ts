@@ -10,4 +10,5 @@ export const paths: Path[] = [
     { url: path + 'transition', name: 'Transitions' },
     { url: path + 'actions', name: 'Actions' },
     { url: path + 'bindings', name: 'Bindings' },
+    { url: path + 'classes', name: 'Classes and Style'},
 ]
