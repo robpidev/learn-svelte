@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-  <style>
-    * {
-      font-family: system-ui;
-    }
-    body {
-      background-color: #121314;
-      color: white;
-      margin: 0;
-    }
-  </style>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+        <meta name="viewport" content="width=device-width" />
+        %sveltekit.head%
+    </head>
+    <style>
+        * {
+            font-family: system-ui;
+        }
+        body {
+            background-color: #121314;
+            color: white;
+            margin: 0;
+        }
+        h1 {
+            padding: 0 1em;
+        }
+        section {
+            position: relative;
+            margin-bottom: 1em;
+            background: rgba(255, 255, 255, 0.09);
+            padding: 1em;
+            border-radius: 12px;
+            overflow-x: hidden;
+
+            @media (max-width: 600px) {
+                border-radius: 0px;
+            }
+        }
+        button {
+            padding: 0.6em 1.2em;
+            border: solid 1px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: border 0.2s, background 0.2s;
+        }
+
+        button:active {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.09);
+        }
+        input {
+            background: inherit;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            padding: 0.5em 1em;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border: solid 1px slateblue;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
 </html>

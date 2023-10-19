@@ -5,14 +5,17 @@
     let selected = '';
     const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'pink', 'white', 'black'];
     let size = 1;
+
+    let canvas: any;
 </script>
 
 <h1>The use Directive</h1>
 <div class="canvas-container">
-    <Canvas color={selected} {size} />
+    <Canvas color={selected} {size} bind:this={canvas} />
     <button class="btn-menu" on:click={() => (showMenu = !showMenu)}>
         {showMenu ? 'close' : 'open'}
     </button>
+    <button class="btn-menu btn-clear" on:click={() => canvas.clear()}> Clear </button>
 
     {#if showMenu}
         <div
@@ -71,6 +74,9 @@
         padding: 0.5em 1em;
         color: white;
         z-index: 1;
+    }
+    .btn-clear {
+        left: 7em;
     }
 
     .btn-menu:hover {

@@ -4,6 +4,10 @@
     export let color: string;
     export let size: number;
 
+    export function clear() {
+        context.clearRect(0, 0, 500, 1000);
+    }
+
     let previous: { x: number; y: number } | null;
 
     let canvas: HTMLCanvasElement;
