@@ -12,4 +12,5 @@ export const paths: Path[] = [
     { url: path + 'bindings', name: 'Bindings' },
     { url: path + 'classes', name: 'Classes and Style'},
     { url: path + 'composition', name: 'Component composotion'},
+    { url: path + 'contextapi', name: 'Context Api'},
 ]
