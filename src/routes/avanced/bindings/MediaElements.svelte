@@ -1,5 +1,5 @@
 <script lang="ts">
-    import AudioPlayer from './utils/AudioPlayer.svelte';
+    import AudioPlayer, { stopAll } from './utils/AudioPlayer.svelte';
     import { tracks } from './utils/tracks';
 </script>
 
@@ -8,6 +8,10 @@
     {#each tracks as track}
         <AudioPlayer {...track} />
     {/each}
+
+    <button on:click={() => stopAll()}>
+        <span>Stop all</span>
+    </button>
 </div>
 
 <style>
@@ -20,5 +24,10 @@
         padding: 1em;
         border-radius: 8px;
         background: rgba(255, 255, 255, 0.05);
+    }
+
+    button {
+        background: slateblue;
+        color: white;
     }
 </style>

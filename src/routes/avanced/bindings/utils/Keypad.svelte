@@ -5,6 +5,7 @@
     const dispatch = createEventDispatcher();
 </script>
 
+{@debug value}
 <div>
     {#each numbers as number}
         {#if typeof number === 'number'}

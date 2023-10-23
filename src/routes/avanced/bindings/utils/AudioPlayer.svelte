@@ -1,3 +1,11 @@
+<script lang="ts" context="module">
+    let current: any;
+
+    export function stopAll() {
+        current?.pause();
+    }
+</script>
+
 <script lang="ts">
     export let src: string;
     export let title: string;
@@ -23,6 +31,14 @@
         bind:currentTime={time}
         bind:duration
         bind:paused
+        on:play={(e) => {
+            const audio = e.currentTarget;
+
+            if (audio !== current) {
+                current?.pause();
+                current = audio;
+            }
+        }}
         on:ended={() => {
             time = 0;
         }}
