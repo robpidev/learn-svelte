@@ -3,7 +3,7 @@
     let numbers = [1, 20];
     for (let i = 0; i < numbers.length; i++) {
         const number = numbers[i];
-        console.log('number: ', number);
+        // console.log('number: ', number);
     }
 </script>
 
@@ -11,6 +11,8 @@
     <a href="/" aria-current={$page.url.pathname === '/'}>Home</a>
     <a href="/avanced" aria-current={$page.url.pathname.includes('/avanced')}>avanced</a>
     <a href="/sveltekit" aria-current={$page.url.pathname.includes('/sveltekit')}>sveltekit</a>
+    <a href="/kitadvanced" aria-current={$page.url.pathname.includes('/kitadvanced')}>kitadvanced</a
+    >
 </nav>
 
 <div class="page">
