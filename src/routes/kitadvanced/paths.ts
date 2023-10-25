@@ -5,5 +5,6 @@ interface Path {
     name: string;
 }
 export const paths: Path [] = [
-    { url: path + "hooks", name: "Hooks"},
+    { url: path + "hooks", name: "Hooks" },
+    { url: path + "linkoptions", name: "Link options" },
 ]

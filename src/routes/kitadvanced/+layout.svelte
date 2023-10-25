@@ -1,5 +1,19 @@
 <script>
     import { paths } from './paths';
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
+
+    let seconds = 0;
+
+    onMount(() => {
+        const interval = setInterval(() => {
+            seconds++;
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    });
 </script>
 
 <div class="content">
@@ -7,11 +21,14 @@
 
     <br />
 
-    <div class="paths">
+    <p>Open this page for {seconds} seconds</p>
+    <nav class="paths" data-sveltekit-reload>
         {#each paths as path}
-            <a class="path" href={path.url}>{path.name}</a>
+            {#if $page.url.pathname !== path.url}
+                <a class="path" href={path.url}>{path.name}</a>
+            {/if}
         {/each}
-    </div>
+    </nav>
 </div>
 
 <style>
@@ -22,7 +39,7 @@
         padding: 0px 1em;
         justify-content: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 1em;
+        padding: 1em;
     }
     .path {
         text-decoration: none;
@@ -45,5 +62,8 @@
         max-width: 1200px;
         box-sizing: border-box;
         width: 100%;
+    }
+    p {
+        padding: 0 1em;
     }
 </style>
