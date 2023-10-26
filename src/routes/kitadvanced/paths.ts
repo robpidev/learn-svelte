@@ -9,4 +9,5 @@ export const paths: Path [] = [
     { url: path + "linkoptions", name: "Link options" },
     { url: path + "routing", name: "Advanced routing" },
     { url: path + "loading", name: "Advanced loading" },
+    { url: path + 'envvariables', name: "Enviroment variables" },
 ]
