@@ -7,4 +7,5 @@ interface Path {
 export const paths: Path [] = [
     { url: path + "hooks", name: "Hooks" },
     { url: path + "linkoptions", name: "Link options" },
+    { url: path + "routing", name: "Advanced routing" },
 ]
